@@ -1,5 +1,5 @@
-BUILD=all.out
-OBJS=test.o src/mystring.o  src/bitmask.o src/myutils.o
+BUILD=a.out
+OBJS=test.o Src/mystring.o  Src/bitmask.o Src/myutils.o
 
 TOPDIR=${PWD}
 CFLAGS=-I${TOPDIR}/inc
@@ -8,20 +8,20 @@ LIBPATH=${PWD}
 
 all:sall.out
 
-sall.out:test.o libmystring.a libmyutils.a libmasking.a
+sall.out:test.o libmystring.a libmyutils.a libbitmask.a
     gcc -L${LIBPATH} $< -o $@ ${LDFLAGS} -static
-libMystring.a:src/mystring.o 
+libMystring.a:Src/mystring.o 
     ar rc $@ $^
-libMyutils.a:src/myutils.o 
+libMyutils.a:Src/myutils.o 
     ar rc $@ $^
-libBitmask.a:src/bitmask.o 
+libBitmask.a:Src/bitmask.o 
     ar rc $@ $^
-%.o:src/%.c inc/%.h
+%.o:Src/%.c Inc/%.h
 
-test.o: test.c inc/*.h
+test.o: test.c Inc/*.h
 
 test:
     ./sall.out
 
 clean:
-    rm -rf *.a *.o src/*.o ${TARGET}
+    rm -rf *.a *.o Src/*.o ${TARGET}
