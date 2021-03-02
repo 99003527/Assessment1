@@ -1,8 +1,8 @@
-BUILD=sall.out
-OBJS=test.o src/mystring.o  src/bitmask.o src/myutils.o
+BUILD=a.out
+OBJS=test.o Src/mystring.o  Src/bitmask.o Src/myutils.o
 
 TOPDIR=${PWD}
-CFLAGS=-I${TOPDIR}/include
+CFLAGS=-I${TOPDIR}/Inc
 LDFLAGS=-lmystring -lmyutils -lmasking
 LIBPATH=${PWD}
 
@@ -16,9 +16,9 @@ libMyutils.a:src/myutils.o
     ar rc $@ $^
 libBitmask.a:src/bitmask.o 
     ar rc $@ $^
-%.o:src/%.c include/%.h
+%.o:src/%.c Inc/%.h
 
-test.o: test.c include/*.h
+test.o: test.c Inc/*.h
 
 test:
     ./sall.out
