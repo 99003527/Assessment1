@@ -21,20 +21,15 @@ int main()
 	}
 	if(ret==0)
 	{
-		//printf("child--welcome,pid=%d,ppid=%d\n",
-			//getpid(),getppid());
         int k;
         char str[20];
         scanf("%s",str);
         k=execl("/usr/bin/pwd",str,NULL);
-        //char* argv[]={"ls","-a",NULL};
-		//k=execl("/usr/bin/cal", "cal", "10", "2021", NULL);
 		if(k<0)
 		{
 			perror("execl");
-			exit(1);
-		
-        }
+			exit(1);	
+                 }
         exit(5);
 	}
 	else	
