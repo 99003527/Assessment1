@@ -22,12 +22,9 @@ int main()
 	}
 	if(ret==0)
 	{
-		printf("child--welcome,pid=%d,ppid=%d\n",
-			getpid(),getppid());
+		printf("child--welcome,pid=%d,ppid=%d\n", getpid(),getppid());
 		int k;
-        k=execl("/usr/bin/gcc","gcc","sample2.c",NULL);
-        //char* argv[]={"ls","-a",NULL};
-		//k=execl("/usr/bin/cal", "cal", "10", "2021", NULL);
+                k=execl("/usr/bin/gcc","gcc","sample2.c",NULL);
 		if(k<0)
 		{
 			perror("execl");
@@ -37,11 +34,9 @@ int main()
 	}
 	else	
 	{
-		printf("parent--hello,pid=%d,ppid=%d\n",
-			getpid(),getppid());
+		printf("parent--hello,pid=%d,ppid=%d\n", getpid(),getppid());
 		waitpid(-1,&status,0); 
-		printf("parent--child exit status=%d\n",
-			WEXITSTATUS(status));
+		printf("parent--child exit status=%d\n", WEXITSTATUS(status));
 	}
 	return 0;
 }
