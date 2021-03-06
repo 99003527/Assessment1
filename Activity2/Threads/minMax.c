@@ -1,4 +1,4 @@
-// Write a program to find min/max element from large array(1000 data points) using parallel computations (multthreading)
+// Write a program to find min/max element from large array(1000 data points) using parallel computations (multthreading).
 
 
 #include <pthread.h> 
