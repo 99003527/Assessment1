@@ -1,4 +1,4 @@
-// Write a program to count no.of lines, words, characters in given file (like wc command)
+// Write a program to count no.of lines, words, characters in given file (like wc command).
 
 #include <stdio.h>
 #include <stdlib.h>
